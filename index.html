@@ -6,20 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>My WebSite</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <meta name="description" content="记录一个蒟蒻的刷题之路">
+<meta property="og:type" content="website">
+<meta property="og:title" content="My WebSite">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:site_name" content="My WebSite">
+<meta property="og:description" content="记录一个蒟蒻的刷题之路">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="LiYaJun">
+<meta property="article:tag" content="C++，Java">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="My WebSite" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/t6.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -34,16 +37,23 @@
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
+
+  
+  
+  
+  
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<!-- <div class="overlay" style="background: #4d4d4d"> -->
+<!-- 左侧边栏（上半部分）不设置背景颜色 -->
+<div class="overlay" ></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/"></a></h1>
@@ -79,11 +89,13 @@
 				
 					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+		        
+					<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=332209078&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="mail" target="_blank" href="mailto:332209078@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -101,7 +113,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author"></h1>
@@ -120,11 +132,13 @@
 					
 						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=332209078&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="mail" target="_blank" href="mailto:332209078@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -152,6 +166,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Leetcode583 " class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/27/Leetcode583%20/">Leetcode583</a>
+    </h1>
+  
+
+        
+        
+
+<a href="/2021/11/27/Leetcode583%20/" class="archive-article-date">
+  	<time datetime="2021-11-26T19:29:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="583-两个字符串的删除操作"><a href="#583-两个字符串的删除操作" class="headerlink" title="583. 两个字符串的删除操作"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/delete-operation-for-two-strings/">583. 两个字符串的删除操作</a></h1><p><img src="/2021/11/27/Leetcode583%20/583.jpg" alt="583"></p>
+<h2 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h2><h4 id="Dynamic-Program"><a href="#Dynamic-Program" class="headerlink" title="Dynamic Program"></a>Dynamic Program</h4><h2 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h2><h4 id="和上面的那个最长公共子序列类似-只需要找出最长的公共子序列-然后连个长度加起来-减去最长公共子序列的二倍-那就是要i操作的次数"><a href="#和上面的那个最长公共子序列类似-只需要找出最长的公共子序列-然后连个长度加起来-减去最长公共子序列的二倍-那就是要i操作的次数" class="headerlink" title="和上面的那个最长公共子序列类似 只需要找出最长的公共子序列 然后连个长度加起来 减去最长公共子序列的二倍 那就是要i操作的次数"></a>和上面的那个最长公共子序列类似 只需要找出最长的公共子序列 然后连个长度加起来 减去最长公共子序列的二倍 那就是要i操作的次数</h4><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minDistance</span><span class="params">(String word1, String word2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//最长公共子序列 找到最长的 然后再减去就可以了</span></span><br><span class="line">        <span class="keyword">int</span> length1 = word1.length();</span><br><span class="line">        <span class="keyword">int</span> length2 = word2.length();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> [] dp = <span class="keyword">new</span> <span class="keyword">int</span>[length2 + <span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= length1; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> last = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= length2; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> old = dp[j];</span><br><span class="line">                <span class="keyword">if</span>(word1.charAt(i - <span class="number">1</span>) == word2.charAt(j - <span class="number">1</span>)) dp[j] = last + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> dp[j] = Math.max(dp[j],dp[j - <span class="number">1</span>]);</span><br><span class="line">                last = old;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> length1 + length2 - <span class="number">2</span> * dp[length2];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="感谢阅读！"><a href="#感谢阅读！" class="headerlink" title="感谢阅读！"></a>感谢阅读！</h1><p><img src="/2021/11/27/Leetcode583%20/583.gif" alt="g"></p>
+
+      
+	  
+		
+		
+		  <div hidden="hidden"></div>
+		
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mid</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/11/27/Leetcode583%20/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -164,7 +262,9 @@
   
 
         
-        <a href="/2021/11/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+        
+
+<a href="/2021/11/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
   	<time datetime="2021-11-26T16:36:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-27</time>
 </a>
         
@@ -172,8 +272,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>Finally 我的博客终于上线了</p>
+<p>做成雏形上线已经凌晨三点了 </p>
+<p>这样空荡荡的又不太好看 就更个lc上的题吧</p>
+
       
+	  
+		
+		
+		  <div hidden="hidden"></div>
+		
 
       
     </div>
@@ -237,7 +345,9 @@
   
 
         
-        <a href="/2021/11/27/hello-world/" class="archive-article-date">
+        
+
+<a href="/2021/11/27/hello-world/" class="archive-article-date">
   	<time datetime="2021-11-26T16:30:59.448Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-27</time>
 </a>
         
@@ -260,6 +370,11 @@
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
+	  
+		
+		
+		  <div hidden="hidden"></div>
+		
 
       
     </div>
@@ -310,14 +425,23 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 John Doe
+    		&copy; 2021 LiYaJun
     	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
     </div>
   </div>
+  
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -395,6 +519,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">念念不忘少年事 喋喋不休梦中人</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mid</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -445,27 +573,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://nowamoreac.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我链我自己</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="/null" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>欢迎来交换友链</a>
             </li>
           
         </ul>
@@ -476,7 +588,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">念念不忘少年事&lt;br/&gt;喋喋不休梦中人&lt;br/&gt;</div>
   	  	
     	</section>
     
