@@ -166,21 +166,21 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Leetcode583 " class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Leetcode583" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/27/Leetcode583%20/">Leetcode583</a>
+      <a class="article-title" href="/2021/11/27/Leetcode583/">Leetcode583</a>
     </h1>
   
 
         
         
 
-<a href="/2021/11/27/Leetcode583%20/" class="archive-article-date">
+<a href="/2021/11/27/Leetcode583/" class="archive-article-date">
   	<time datetime="2021-11-26T19:29:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-27</time>
 </a>
         
@@ -188,10 +188,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="583-两个字符串的删除操作"><a href="#583-两个字符串的删除操作" class="headerlink" title="583. 两个字符串的删除操作"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/delete-operation-for-two-strings/">583. 两个字符串的删除操作</a></h1><p><img src="/2021/11/27/Leetcode583%20/583.jpg" alt="583"></p>
+        <h1 id="583-两个字符串的删除操作"><a href="#583-两个字符串的删除操作" class="headerlink" title="583. 两个字符串的删除操作"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/delete-operation-for-two-strings/">583. 两个字符串的删除操作</a></h1><p><img src="/2021/11/27/Leetcode583/583.jpg" alt="583"></p>
 <h2 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h2><h4 id="Dynamic-Program"><a href="#Dynamic-Program" class="headerlink" title="Dynamic Program"></a>Dynamic Program</h4><h2 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h2><h4 id="和上面的那个最长公共子序列类似-只需要找出最长的公共子序列-然后连个长度加起来-减去最长公共子序列的二倍-那就是要i操作的次数"><a href="#和上面的那个最长公共子序列类似-只需要找出最长的公共子序列-然后连个长度加起来-减去最长公共子序列的二倍-那就是要i操作的次数" class="headerlink" title="和上面的那个最长公共子序列类似 只需要找出最长的公共子序列 然后连个长度加起来 减去最长公共子序列的二倍 那就是要i操作的次数"></a>和上面的那个最长公共子序列类似 只需要找出最长的公共子序列 然后连个长度加起来 减去最长公共子序列的二倍 那就是要i操作的次数</h4><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minDistance</span><span class="params">(String word1, String word2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//最长公共子序列 找到最长的 然后再减去就可以了</span></span><br><span class="line">        <span class="keyword">int</span> length1 = word1.length();</span><br><span class="line">        <span class="keyword">int</span> length2 = word2.length();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> [] dp = <span class="keyword">new</span> <span class="keyword">int</span>[length2 + <span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= length1; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> last = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= length2; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> old = dp[j];</span><br><span class="line">                <span class="keyword">if</span>(word1.charAt(i - <span class="number">1</span>) == word2.charAt(j - <span class="number">1</span>)) dp[j] = last + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> dp[j] = Math.max(dp[j],dp[j - <span class="number">1</span>]);</span><br><span class="line">                last = old;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> length1 + length2 - <span class="number">2</span> * dp[length2];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="感谢阅读！"><a href="#感谢阅读！" class="headerlink" title="感谢阅读！"></a>感谢阅读！</h1><p><img src="/2021/11/27/Leetcode583%20/583.gif" alt="g"></p>
+<h1 id="感谢阅读！"><a href="#感谢阅读！" class="headerlink" title="感谢阅读！"></a>感谢阅读！</h1><p><img src="/2021/11/27/Leetcode583/583.gif" alt="g"></p>
 
       
 	  
@@ -220,7 +220,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/27/Leetcode583%20/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/11/27/Leetcode583/">展开全文 >></a>
         </p>
       
 
