@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://nowamoreac.github.io">
-  <title>My WebSite</title>
+  <title>Tag: LeetCode | My WebSite</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="记录一个蒟蒻的刷题之路">
 <meta property="og:type" content="website">
 <meta property="og:title" content="My WebSite">
-<meta property="og:url" content="https://nowamoreac.github.io/index.html">
+<meta property="og:url" content="https://nowamoreac.github.io/tags/LeetCode/index.html">
 <meta property="og:site_name" content="My WebSite">
 <meta property="og:description" content="记录一个蒟蒻的刷题之路">
 <meta property="og:locale" content="zh_CN">
@@ -162,269 +162,36 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-LeetCode400" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/29/LeetCode400/">LeetCode400</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2021/11/29/LeetCode400/" class="archive-article-date">
-  	<time datetime="2021-11-29T14:20:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-29</time>
-</a>
-        
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2021/11/29/LeetCode400/400.png" alt="400.png"></p>
-<p>这个题是Acwing周赛的翻版，变得地方是数据范围，变得很大</p>
-<h3 id="ACW原题如下"><a href="#ACW原题如下" class="headerlink" title="ACW原题如下"></a>ACW原题如下</h3><p><img src="/2021/11/29/LeetCode400/ac400.png" alt="ac400"></p>
-<p>Acwing 这个题目数据范围很短只到了1000，所以我们可以尝试打表</p>
-<h4 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">string s;</span><br><span class="line"><span class="function"><span class="keyword">constexpr</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123; <span class="comment">//由于数据量比较小 所以就可以直接打表输出</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">1000</span>; i++) s += <span class="built_in">to_string</span>(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	std::ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">init</span>();</span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T --) &#123;</span><br><span class="line">		<span class="keyword">int</span> i;</span><br><span class="line">		cin &gt;&gt; i;</span><br><span class="line">		cout &lt;&lt; s[i - <span class="number">1</span>] &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="回到我们的LC400"><a href="#回到我们的LC400" class="headerlink" title="回到我们的LC400"></a>回到我们的LC400</h3><h5 id="这个题的数据量就有点小大，要是还是使用打表那就肯定要超时了（其实不止超时的问题存储也称问题"><a href="#这个题的数据量就有点小大，要是还是使用打表那就肯定要超时了（其实不止超时的问题存储也称问题" class="headerlink" title="这个题的数据量就有点小大，要是还是使用打表那就肯定要超时了（其实不止超时的问题存储也称问题"></a>这个题的数据量就有点小大，要是还是使用打表那就肯定要超时了（其实不止超时的问题存储也称问题</h5><h4 id="那就要用到万能的数学了"><a href="#那就要用到万能的数学了" class="headerlink" title="那就要用到万能的数学了"></a>那就要用到万能的数学了</h4><h5 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h5><p>要计算定位到你要输出的数字是多少位的 </p>
-<p>分析一下数据我们可以找到如下规律</p>
-<table>
-<thead>
-<tr>
-<th>数字范围</th>
-<th>总数字数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1 ~ 9</td>
-<td>1 * 9个</td>
-</tr>
-<tr>
-<td>10 ~ 99</td>
-<td>2 * 90 个</td>
-</tr>
-<tr>
-<td>100 ~ 999</td>
-<td>3 * 900个</td>
-</tr>
-</tbody></table>
-<p>下面我们以 418来作为示例</p>
-<table>
-<thead>
-<tr>
-<th>cnt(位数)</th>
-<th>start(计算总数字数的起始位)</th>
-<th>next_start</th>
-<th>example</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>418</td>
-</tr>
-<tr>
-<td>1</td>
-<td>9</td>
-<td>9</td>
-<td>409</td>
-</tr>
-<tr>
-<td>2</td>
-<td>90</td>
-<td>99</td>
-<td>229</td>
-</tr>
-<tr>
-<td>3</td>
-<td>900</td>
-<td>99</td>
-<td>-直接跳出</td>
-</tr>
-</tbody></table>
-<h5 id="详细过程"><a href="#详细过程" class="headerlink" title="详细过程"></a>详细过程</h5><p>cnt = 1 ,start = 9,  next_start = 0</p>
-<p>从1 * 9开始</p>
-<p>418 - 9 = 409</p>
-<p>2 * 90 = 180</p>
-<p>409 - 180 = 229</p>
-<p>3 * 900 = 2700 &gt; 229</p>
-<p>所以定位在三位数</p>
-<p>下面要计算具体是那个  数</p>
-<p>num = next_start + (example - 1) / cnt + 1</p>
-<p>num = 99 + (229 - 1) / 3 + 1 = 176</p>
-<p>定位到具体的数字</p>
-<p>idx = (example - 1) % cnt + 1</p>
-<p>idx = (229 - 1) % 3 + 1 = 1</p>
-<p>所以是176的第一位数字1</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">findNthDigit</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">long</span> base = <span class="number">9</span>, dig = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (n &gt; base * dig) &#123;</span><br><span class="line">			n -= base * dig;</span><br><span class="line">			num += base;</span><br><span class="line">			base *= <span class="number">10</span>;</span><br><span class="line">			dig++;</span><br><span class="line">		&#125;</span><br><span class="line">		num += (n - <span class="number">1</span>) / dig + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> idx = (n - <span class="number">1</span>) % dig + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (dig-- &gt; idx)num /= <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">return</span> num % <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="感谢阅读！"><a href="#感谢阅读！" class="headerlink" title="感谢阅读！"></a>感谢阅读！</h4><p><img src="/2021/11/29/LeetCode400/thk.jpg" alt="thk.jpg"></p>
-
-      
-	     <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-    <div class="article-info article-info-index">
+    
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Mid</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Acwing</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/29/LeetCode400/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-LeetCode239" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+        <div class="archives">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/28/LeetCode239/">LeetCode239</a>
-    </h1>
-  
-
-        
-        
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
 
 <a href="/2021/11/28/LeetCode239/" class="archive-article-date">
   	<time datetime="2021-11-28T14:33:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-28</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="239-滑动窗口最大值"><a href="#239-滑动窗口最大值" class="headerlink" title="239. 滑动窗口最大值"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sliding-window-maximum/">239. 滑动窗口最大值</a></h3><p><img src="/2021/11/28/LeetCode239/question.png" alt="question.png"></p>
-<h3 id="1-凑数（图一乐"><a href="#1-凑数（图一乐" class="headerlink" title="1.凑数（图一乐"></a>1.凑数（图一乐</h3><p>当时为了什么也不会就直接想着取每段数组切片排一下序 这还不简单，事实证明我错了  当时还不太会分析复杂度 就直接硬往上写O(n^2 logn)的复杂度 直接来了一发TLE（血的教训</p>
-<h4 id="解释：用数组拷贝来分成小数组-然后排序锁定最大值-收集一下"><a href="#解释：用数组拷贝来分成小数组-然后排序锁定最大值-收集一下" class="headerlink" title="解释：用数组拷贝来分成小数组,然后排序锁定最大值 收集一下"></a>解释：用数组拷贝来分成小数组,然后排序锁定最大值 收集一下</h4><h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] maxSlidingWindow(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">int</span> [] n =<span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        <span class="keyword">int</span> [] max = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length - k + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>,j = <span class="number">0</span>;i &lt;= nums.length-k; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            System.arraycopy(nums,i,n,<span class="number">0</span>,k);</span><br><span class="line">            Arrays.sort(n);</span><br><span class="line">            max[j++] = n[k-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/11/28/LeetCode239/">LeetCode239</a>
+    </h1>
+  
 
-<h3 id="2-单调栈解法"><a href="#2-单调栈解法" class="headerlink" title="2.单调栈解法"></a>2.单调栈解法</h3><p>单调栈解法很好理解，这里先给出代码 后面会给出解释</p>
-<h4 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] maxSlidingWindow(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        Deque&lt;Integer&gt; queue = <span class="keyword">new</span> ArrayDeque&lt;&gt;(); <span class="comment">//双端队列</span></span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[n - k + <span class="number">1</span>];<span class="comment">//接受答案的数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> , j = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="comment">//先是装满一个队列</span></span><br><span class="line">            <span class="comment">//达到出队条件了 下表超出了</span></span><br><span class="line">            <span class="keyword">while</span> (!queue.isEmpty() &amp;&amp; i- k + <span class="number">1</span> &gt; queue.getFirst())   queue.pollFirst();</span><br><span class="line">            <span class="comment">//当新来的元素比最后一个元素也就是最小的元素大的时候 就将最后一个去除掉 然后将后来的添加元素进去</span></span><br><span class="line">            <span class="keyword">while</span> (!queue.isEmpty() &amp;&amp; nums[i] &gt; nums[queue.getLast()])  queue.pollLast();</span><br><span class="line">            queue.add(i);</span><br><span class="line">            <span class="comment">//维护保持队头元素为最大的</span></span><br><span class="line">            <span class="keyword">if</span>( i - k + <span class="number">1</span> &gt;= <span class="number">0</span>) res[j++] = nums[queue.peek()];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="解释：按照题目给出的示例模拟一下就很好理解"><a href="#解释：按照题目给出的示例模拟一下就很好理解" class="headerlink" title="解释：按照题目给出的示例模拟一下就很好理解"></a>解释：按照题目给出的示例模拟一下就很好理解</h4><p>理解 按照题目给出的示例 </p>
-<p>第一步 队列为空 </p>
-<p>(?-?) -&gt; (index &amp; (symbol) value） k = 3 </p>
-<p>开始操作</p>
-<p>i =  0 时 queue为空 直接跳过两个while  添加（0 &amp; 1） 到队列中</p>
-<hr>
-<p>i = 1 时 queue不为空 此时 i - k +1 = -1 &lt; 0 跳到 第二个while循环，此时nums[i] = 3 &gt; nums[queue.getLast] = 2 进入操作 将队尾元素去除 队列变为空 然后跳出循环 将（1 &amp; 3）添加到队列中 此时 i - k +1 = -1 &lt; 0 if 判断不成立  </p>
-<hr>
-<p>i = 2时 queue不为空 此时  i - k +1 = 0 &lt; 1 跳到第二个while， 此时nums[i] = -1 &lt; nums[queue.getLast] = 3 跳出循环。 将（2 &amp; –1）添加到队列中</p>
-<p>此时 i - k +1 = 0 满足 if 语句中的条件 将 队首元素添加到接受答案数组的里面    【 3】</p>
-<hr>
-<p>i = 3 时 queue不为空 此时 i - k +1 = 1 不满足第一个while循环的条件直接跳到第二个循环，此时nums[i] = -3 &lt; nums[queue.getLast] = 3，</p>
-<p>直接将 （3 &amp; -3）添加到队列中  此时队头还是（1 &amp; 3）  添加到接受答案数组的里面【3，3】</p>
-<hr>
-<p>i = 4 时 此时 i - k +1 = 2 &gt; nums[getFirst] = 1 进入第一个循环 此时队首元素已经已经超出限制 将队首元素弹出，</p>
-<p>此时nums[i] = 5 &gt; nums[queue.getLast] = -3  将队尾元素弹出 弹出后队尾元素为（2 &amp; -1）继续在第二个while循环里面进行检测 </p>
-<p>发现nums[i] = 5 &gt; nums[queue.getLast] = -1 还是需要进行操作 弹出后 queue已为空 跳出循环将（4 &amp; 5）添加到队列中 此时队首为4</p>
-<p>将其对应的数组元素添加到 答案数组中 【3，3，5】</p>
-<hr>
-<p>。。。。。。。。。。</p>
-<h3 id="3-优先队列"><a href="#3-优先队列" class="headerlink" title="3.优先队列"></a>3.优先队列</h3><p>这题最容易想到的就是优先队列</p>
-<p>也是指定为递减的队列</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] maxSlidingWindow(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="comment">//比较器 递减</span></span><br><span class="line">        Queue&lt;<span class="keyword">int</span>[]&gt; queue = <span class="keyword">new</span> PriorityQueue&lt;&gt;((o1, o2) -&gt; o2[<span class="number">0</span>] - o1[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[n-k+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="comment">//下表越界删除</span></span><br><span class="line">            <span class="keyword">while</span> (!queue.isEmpty() &amp;&amp; i - queue.peek()[<span class="number">1</span>] &gt;= k)</span><br><span class="line">                queue.poll();<span class="comment">//删除队首</span></span><br><span class="line">            queue.offer(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;nums[i], i&#125;);<span class="comment">//添加进去</span></span><br><span class="line">            <span class="keyword">if</span> (i - k +<span class="number">1</span> &gt;= <span class="number">0</span>)<span class="comment">//是否满足滑动窗口的条件</span></span><br><span class="line">                res[m++] = queue.peek()[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>里面存储的为int数组 【0】为数值【1】为数值所在的下表</p>
-<p>每次添加的都是滑动窗口最新的 将新添加的元素按照比较器排列 peek总为最大的元素对</p>
-<p>里面的元素总为降序排列 也有可能之前的较大的元素冗余在优先队列里面 此时判断其元素索引是不是超出</p>
-<h1 id="感谢阅读！"><a href="#感谢阅读！" class="headerlink" title="感谢阅读！"></a>感谢阅读！</h1><p><img src="/2021/11/28/LeetCode239/583.gif" alt="583.gif"></p>
-
-      
-	     <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -452,89 +219,35 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/28/LeetCode239/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
   
-    <article id="post-Leetcode583" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/27/Leetcode583/">Leetcode583</a>
-    </h1>
-  
-
-        
-        
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
 
 <a href="/2021/11/27/Leetcode583/" class="archive-article-date">
   	<time datetime="2021-11-26T19:29:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-27</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="583-两个字符串的删除操作"><a href="#583-两个字符串的删除操作" class="headerlink" title="583. 两个字符串的删除操作"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/delete-operation-for-two-strings/">583. 两个字符串的删除操作</a></h1><p><img src="/2021/11/27/Leetcode583/583.jpg" alt="583"></p>
-<h2 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h2><h4 id="Dynamic-Program"><a href="#Dynamic-Program" class="headerlink" title="Dynamic Program"></a>Dynamic Program</h4><h2 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h2><h4 id="和上面的那个最长公共子序列类似-只需要找出最长的公共子序列-然后连个长度加起来-减去最长公共子序列的二倍-那就是要i操作的次数"><a href="#和上面的那个最长公共子序列类似-只需要找出最长的公共子序列-然后连个长度加起来-减去最长公共子序列的二倍-那就是要i操作的次数" class="headerlink" title="和上面的那个最长公共子序列类似 只需要找出最长的公共子序列 然后连个长度加起来 减去最长公共子序列的二倍 那就是要i操作的次数"></a>和上面的那个最长公共子序列类似 只需要找出最长的公共子序列 然后连个长度加起来 减去最长公共子序列的二倍 那就是要i操作的次数</h4><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minDistance</span><span class="params">(String word1, String word2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//最长公共子序列 找到最长的 然后再减去就可以了</span></span><br><span class="line">        <span class="keyword">int</span> length1 = word1.length();</span><br><span class="line">        <span class="keyword">int</span> length2 = word2.length();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> [] dp = <span class="keyword">new</span> <span class="keyword">int</span>[length2 + <span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= length1; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> last = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= length2; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> old = dp[j];</span><br><span class="line">                <span class="keyword">if</span>(word1.charAt(i - <span class="number">1</span>) == word2.charAt(j - <span class="number">1</span>)) dp[j] = last + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> dp[j] = Math.max(dp[j],dp[j - <span class="number">1</span>]);</span><br><span class="line">                last = old;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> length1 + length2 - <span class="number">2</span> * dp[length2];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/11/27/Leetcode583/">Leetcode583</a>
+    </h1>
+  
 
-<h1 id="感谢阅读！"><a href="#感谢阅读！" class="headerlink" title="感谢阅读！"></a>感谢阅读！</h1><p><img src="/2021/11/27/Leetcode583/583.gif" alt="g"></p>
-
-      
-	     <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -550,136 +263,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/27/Leetcode583/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
   
-    <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2021/11/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2021-11-26T16:36:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Finally 我的博客终于上线了</p>
-<p>做成雏形上线已经凌晨三点了 </p>
-<p>这样空荡荡的又不太好看 就更个lc上的题吧</p>
-<hr>
-
-      
-	     <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">第一个博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-  
 
 
           </div>
@@ -711,10 +307,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
