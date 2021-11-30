@@ -162,6 +162,134 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-AcWing-4080" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/29/AcWing-4080/">二分专题</a>
+    </h1>
+  
+
+        
+        
+
+<a href="/2021/11/29/AcWing-4080/" class="archive-article-date">
+  	<time datetime="2021-11-29T15:19:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2021/11/29/AcWing-4080/4080.png" alt="4080.png"></p>
+<p> 标准二分模板题</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;<span class="comment">//使用LL范围不小防止爆int</span></span><br><span class="line">LL n,m,k;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(LL mid)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LL res = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//枚举行 降级判断 判断有多少个比mid大的数 用来计算 也就是mid 和 i*m比较</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++i) res += <span class="built_in">min</span>(m, mid / i);<span class="comment">//一行最多m个大于mid * i的数字 所以取最小值防止越界</span></span><br><span class="line">    <span class="keyword">return</span> res &gt;= k;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m&gt;&gt;k;</span><br><span class="line">    LL l = <span class="number">1</span>,r = n * m;</span><br><span class="line">    <span class="comment">//拿mid来判断 也就是二分出确切答案</span></span><br><span class="line">    <span class="keyword">while</span>(l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        LL mid = l + r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">check</span>(mid)) r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; r&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2064-分配给商店的最多商品的最小值"><a href="#2064-分配给商店的最多商品的最小值" class="headerlink" title="2064. 分配给商店的最多商品的最小值"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimized-maximum-of-products-distributed-to-any-store/">2064. 分配给商店的最多商品的最小值</a></h3><p><img src="/2021/11/29/AcWing-4080/lc01.png" alt="lc01"></p>
+<p>这个题也是一个很经典的二分 二分出答案 然后丢掉check函数里面检查</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> mid, <span class="keyword">int</span> n,vector&lt;<span class="keyword">int</span>&gt;&amp; q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; q.<span class="built_in">size</span>();i++)<span class="comment">//mid -&gt; 每一家商店分到的商品数</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//n要满足分到mid件商品 所以使用q[i] / mid</span></span><br><span class="line">        n -= q[i] / mid;</span><br><span class="line">        <span class="comment">//前面的几家店分每家店mid件商品然后这个商店里面还剩下几个商品 用一家商店接受</span></span><br><span class="line">        <span class="keyword">if</span>(q[i] % mid) n--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//n &lt; 0就代表着 mid 有点小 </span></span><br><span class="line">    <span class="comment">//n &gt;= 0题目可以让后面的店里面没有商品 所以这样是合格的 在合格线里面继续找最小的答案</span></span><br><span class="line">    <span class="keyword">return</span> n &gt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minimizedMaximum</span><span class="params">(<span class="keyword">int</span> n, vector&lt;<span class="keyword">int</span>&gt;&amp; q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">1</span>, r =  <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line">        <span class="comment">//mid -&gt; 每一家商店分到的商品数</span></span><br><span class="line">        <span class="keyword">int</span> ans = r;</span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (l + r ) / <span class="number">2</span>; </span><br><span class="line">            <span class="comment">//判断函数表示成立就表示满足 然后取里面的最小值作为答案（过程也就是二分答案知道能找出来最小的满足题目条件的答案</span></span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">check</span>(mid,n,q)) ans = <span class="built_in">min</span>(ans,mid),r = mid - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="786-第-K-个最小的素数分数"><a href="#786-第-K-个最小的素数分数" class="headerlink" title="786. 第 K 个最小的素数分数"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/k-th-smallest-prime-fraction/">786. 第 K 个最小的素数分数</a></h3><p><img src="/2021/11/29/AcWing-4080/lc02.png" alt="lc02.png"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="keyword">int</span> x,y;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check</span><span class="params">(<span class="keyword">double</span> mid, vector&lt;<span class="keyword">int</span>&gt;&amp; a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;<span class="comment">//记录k的位次</span></span><br><span class="line">    <span class="keyword">double</span> large = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">1</span>;j &lt; a.<span class="built_in">size</span>();j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(a[i + <span class="number">1</span>] * <span class="number">1.0</span> / a[j] &lt;= mid) i++;<span class="comment">//双指针优化</span></span><br><span class="line">        <span class="keyword">if</span>(a[i] * <span class="number">1.0</span> / a[j] &lt;= mid)</span><br><span class="line">        &#123;</span><br><span class="line">            ans += i + <span class="number">1</span>;</span><br><span class="line">            <span class="comment">//答案k的分数范围可能是一个平的线所以要取k范围内最大的那个作为答案</span></span><br><span class="line">            <span class="keyword">if</span>(a[i] * <span class="number">1.0</span> / a[j] &gt; large) x = a[i],y = a[j], large = x * <span class="number">1.0</span> / y;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">kthSmallestPrimeFraction</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; a, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> l = <span class="number">0</span>, r = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">double</span> mid = (l + r) / <span class="number">2</span>;<span class="comment">//二分枚举出来准确的分数数值</span></span><br><span class="line">            <span class="keyword">int</span> cnt = <span class="built_in">check</span>(mid, a);<span class="comment">//记录k的位次</span></span><br><span class="line">            <span class="keyword">if</span>(cnt &gt; k) r = mid;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(cnt &lt; k) l = mid;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;x,y&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>双指针优化注释 ：比如说在分母为9的时候前面的1 2 3 4 5都比mid要小那把分母变成10的时候1 2 3 4 5还是一样会比mid小这样也就不需要再次遍历做无用功</strong></p>
+<p>感觉二分挺神奇的 有时间深挖</p>
+<h1 id="感谢阅读！"><a href="#感谢阅读！" class="headerlink" title="感谢阅读！"></a>感谢阅读！</h1><p><img src="/2021/11/29/AcWing-4080/tnk.jpg" alt="tnk.jpg"></p>
+
+      
+	     <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Mid</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">二分</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AcWing</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/11/29/AcWing-4080/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-LeetCode400" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -840,6 +968,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Acwing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">二分</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">AcWing</a>
               </li>
             
             <div class="clearfix"></div>
